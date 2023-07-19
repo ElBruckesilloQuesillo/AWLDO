@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>
+            {%block title%}
+
+            {% endblock %}
+        </title>
+    </head>
+
+    <body>
+
+        <!--NavBar-->
+        <nav>
+            {%include './NavBar.html' %}
+        </nav>
+
+        <!--Bloque de contenido-->
+        <main>
+            {%block content%} {% endblock %}
+        </main>
+
+        <!--Footer-->
+        <footer>
+            {%include './Footer.html'%}
+        </footer>
+        
+    
+    </body>
+
+
+
+</html>
