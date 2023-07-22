@@ -1,9 +1,15 @@
+<!--Componente principal que mostrará el contenido de las vistas. 
+    Reciclando código para footer y el ./NavBar.html.
+    
+    Cada bloque funciona como si fuera una variable, en cada
+    vista html se heredarán estas variables y se cambiará su
+    valor de modo que nos convenga. Ver EjemploView para consultar esto.
+-->
 <html>
     <head>
+        <!--Apertura de bloque title.-->
         <title>
-            {%block title%}
-
-            {% endblock %}
+            {%block title%}{% endblock %}
         </title>
     </head>
 
@@ -14,7 +20,7 @@
             {%include './NavBar.html' %}
         </nav>
 
-        <!--Bloque de contenido-->
+        <!--Apertura de bloque content.-->
         <main>
             {%block content%} {% endblock %}
         </main>

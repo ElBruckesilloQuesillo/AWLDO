@@ -51,10 +51,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'lineaDeOro.urls'
 
+"""Aquí cambiar dirección de alojamiento de la carpeta views"""
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/xampp/htdocs/Desarrollo Web Empresarial/lineaDeOro/lineaDeOro/views'],
+        'DIRS': ['C:/xampp/htdocs/django/LineaDeOro/lineaDeOro/views'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
