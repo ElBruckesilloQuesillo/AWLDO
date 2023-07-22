@@ -16,8 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+
+
+#Importando todos nuestros métodos de carga y renderizado.
 from lineaDeOro.views import *
 
+"""
+urlpatterns es una lista de patrones, cada elemento de esta lista define una url y un método
+asociado a esta url. Ejemplo:
+    Cada vez que se ingrese en el navegador la url 'lineaDeOro/ejemplo', se llamará el método 
+    EjemploView.
+"""
+
 urlpatterns = [
-    path('lineaDeOro/inicio', InicioView),
+    path('lineaDeOro/ejemplo', EjemploView),
 ]
