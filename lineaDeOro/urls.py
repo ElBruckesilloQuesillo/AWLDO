@@ -29,5 +29,6 @@ asociado a esta url. Ejemplo:
 """
 
 urlpatterns = [
+    path('',InicioView),
     path('lineaDeOro/ejemplo', EjemploView),
 ]

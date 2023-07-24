@@ -41,3 +41,8 @@ def EjemploView(request):
     #Retornamos solicitud, nuestra plantilla renderizada y el contexto. Ver vista EjemploView.
     return render(request, "EjemploView.html", contexto) 
 
+
+#Vista inicio
+def InicioView(request):
+    contexto = {}
+    return render(request,'InicioView.html', contexto)
