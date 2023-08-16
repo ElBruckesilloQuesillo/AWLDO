@@ -1,3 +1,9 @@
+────▄███▄──▄███▄───----
+────▐██████▐█████▌────
+─────▀████▌█████▀─────
+───────▀██▐███▀───────
+─────────▀▐█▀───Charly is love
+
 # GENERALES
     1. Carpeta views: Esta carpeta contiene todas las vistas html del sitio.
         Asegurarse colocar la siguiente nomenclatura para un mejor entendimiento:
