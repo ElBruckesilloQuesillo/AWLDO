@@ -1,0 +1,110 @@
+{% extends "lineaDeOro/Base.html" %}
+
+{% load static %}
+
+
+{% block title %}Comprar boletos{% endblock  %}
+
+
+{% block heading %}Selecciona tu destino{% endblock  %}
+
+{% block content %}
+    <!-- Heading -->
+
+    <!-- Message -->
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner text-center rounded">
+                        <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">Selecciona tu destino</span>
+                        <span class="section-heading-lower">Garantizado</span>
+                        </h2>
+
+                        
+                        
+
+                        <div class="accordion" id="accordionExample">
+                        
+                       {% for Ciudad in Ciudades %}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="header{{Ciudad.nombre_ciudad}}">
+                                    <button class="accordion-button ciudad-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{Ciudad.nombre_ciudad}}" aria-expanded="false" aria-controls="collapse{{Ciudad.nombre_ciudad}}" style="background-image: url('{{ Ciudad.url_imagen }}'); ">
+                                        <p class="texto">{{ Ciudad.nombre_ciudad }}</p>
+                                    </button>
+                                </h2>
+                                <div id="collapse{{Ciudad.nombre_ciudad}}" class="accordion-collapse collapse" aria-labelledby="header{{Ciudad.nombre_ciudad}}" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="d-grid gap-2 d-md-block">
+
+                                        <div class="d-grid gap-2 d-md-block">
+                                        {% for Destino in Destinos %}
+                                            
+                                            {% if Destino.ciudad_destino.nombre_ciudad == Ciudad.nombre_ciudad %}
+                                                <button class="btn btn-secondary" type="button"> 
+                                                    {{Destino.hora_llegada}}
+                                                </button>
+                                            {% endif %}
+                                            
+                                        {% endfor %}
+                                        
+                                        </div>
+                                        
+                                            
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        {% endfor %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<style>
+.ciudad-button {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    width: 100%;
+    z-index: 0;
+}
+
+.ciudad-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro por defecto */
+    opacity: 1; /* Mostrar el fondo oscuro por defecto */
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.ciudad-button:hover::before {
+    opacity: 0; /* Ocultar el fondo oscuro en el hover */
+}
+
+.texto{
+    font-size: 50px;
+    color: #ffffff;
+    margin: 0; /* Remueve el margen interno del párrafo */
+    text-align: center; /* Centra horizontalmente el texto */
+    width: 100%; 
+}
+
+</style>
+{% endblock  %}
